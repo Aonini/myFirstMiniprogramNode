@@ -1,0 +1,37 @@
+1.github    上下载   https://github.com/icindy/wxParse
+
+
+2.下载完成之后  找到里面的wxParse文件 复制到项目的根目录层
+
+
+3.用到的页面js引入依赖   或者可以全局引入
+
+	@import css引入 
+	let wxParse = require("js路径")
+
+	
+
+
+	js使用
+	var article = '<div>我是HTML代码</div>';
+	/**
+	* WxParse.wxParse(bindName , type, data, target,imagePadding)
+	* 1.bindName绑定的数据名(必填)
+	* 2.type可以为html或者md(必填)
+	* 3.data为传入的具体数据(必填)
+	* 4.target为Page对象,一般为this(必填)
+	* 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
+	*/
+	var that = this;
+	WxParse.wxParse('article', 'html', article, that, 5);
+
+
+
+	HTML引入
+
+
+	<import src="你的路径/wxParse/wxParse.wxml"/>
+	//这里data中article为bindName
+	<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+
+
